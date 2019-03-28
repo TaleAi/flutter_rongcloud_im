@@ -17,15 +17,23 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    initPlatformState();
+    _init();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
+  Future<void> _init() async {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      await FlutterRongcloudIm.init(_token);
+      await FlutterRongcloudIm.init(_token); //appkey
+      FlutterRongcloudIm.connect(_token); // 服务器生成的token
+      FlutterRongcloudIm.joinChatRoom('roomid', -1); // 加入聊天室
+      FlutterRongcloudIm.responseFromMessageReceived.listen((data) {
+        //收到消息
+      });
+//      FlutterRongcloudIm.setUserInfo(id, name, avatar, level); // 设置用户信息
+//      FlutterRongcloudIm.sendImageMessage(conversationType, targetId, imagePath, extra); //发送文字消息
+//    FlutterRongcloudIm.sendTextMessage(conversationType, targetId, content, extra);
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -35,8 +43,7 @@ class _MyAppState extends State<MyApp> {
     // setState to update our non-existent appearance.
     if (!mounted) return;
 
-    setState(() {
-    });
+    setState(() {});
   }
 
   @override

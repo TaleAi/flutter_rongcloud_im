@@ -1,6 +1,6 @@
 # flutter_rongcloud_im
 
-A new Flutter rongcloud im plugin.
+flutter封装的融云imlib库，项目比较忙，文档抽空写；
 
 ## Getting Started
 

@@ -14,7 +14,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-### 捐助
-请作者喝杯咖啡。
-
-<img src="./arts/wx.png" height="300">  <img src="./arts/ali.jpeg" height="300">
+### 请使用官网插件
